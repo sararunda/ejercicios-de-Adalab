@@ -1,0 +1,13 @@
+.container_1 {
+    width: 500px;
+    height: 500px;
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container_1 div {
+    background-color: pink;
+    border: solid black;
+}
