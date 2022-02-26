@@ -1,0 +1,41 @@
+body {
+    background-color: blue;
+}
+
+.encabezado {
+    background-color: coral;
+    height: 200px;
+}
+
+.principal {
+    background-color: blueviolet;
+    height: 300px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+
+}
+
+.pie {
+    background-color: black;
+    height: 200px;
+    margin-top: 200px;
+}
+
+@media all and (min-width: 480px) {
+    body {
+        background: red;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+    body {
+        background: yellow;
+    }
+}
+
+@media all and (min-width: 768px) {
+    body {
+        background: green;
+    }
+}
