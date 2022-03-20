@@ -8,3 +8,5 @@ function opacitySecondButton() {
 
 const button1 = document.querySelector(".button:first-child");
 button1.addEventListener("click", opacitySecondButton);
+
+console.log(button1);
