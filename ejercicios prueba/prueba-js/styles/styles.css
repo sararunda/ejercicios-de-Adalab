@@ -13,3 +13,7 @@
 .js-button {
     margin-left: 50px;
 }
+
+.hidden {
+    display: none;
+}
