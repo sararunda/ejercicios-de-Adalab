@@ -37,12 +37,24 @@ id="aceptar"
 value="aceptar"
 class="js-button"
 />`;
+const gatito = document.querySelector(".gatito");
+const guine = document.querySelector(".guine");
 //funcion
 function collapsed() {
   if (list.classList.contains("hidden")) {
     list.classList.remove("hidden");
   } else {
     list.classList.add("hidden");
+  }
+  if (gatito.classList.contains("hidden")) {
+    gatito.classList.remove("hidden");
+  } else {
+    gatito.classList.add("hidden");
+  }
+  if (guine.classList.contains("hidden")) {
+    guine.classList.remove("hidden");
+  } else {
+    guine.classList.add("hidden");
   }
 }
 //evento
