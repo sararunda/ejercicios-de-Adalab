@@ -8,16 +8,16 @@ function randomNumber(min, max) {
   const randomDecimals = Math.random() * (max - min) + min;
   return Math.trunc(randomDecimals);
 }
-
-function handleClick() {
+function actualizarCarita() {
   const selectValue = select.value;
   if (selectValue === "happy") {
     emojiTex.innerHTML = ":)";
   } else if (selectValue === "sad") {
     emojiTex.innerHTML = ":(";
   }
+}
+function cambiarElFondo() {
   const number = randomNumber(1, 100);
-
   if (number % 2 == 0) {
     bodyColor.classList.add("yellow");
     bodyColor.classList.remove("orange");
@@ -25,6 +25,11 @@ function handleClick() {
     bodyColor.classList.remove("yellow");
     bodyColor.classList.add("orange");
   }
+}
+
+function handleClick() {
+  actualizarCarita();
+  cambiarElFondo();
 }
 
 updateButton.addEventListener("click", handleClick);
