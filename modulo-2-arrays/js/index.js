@@ -33,3 +33,14 @@ function countAdalabers(array) {
 }
 const adalabersTotal = countAdalabers(adalabers);
 console.log(adalabersTotal);
+
+function averageAge(people) {
+  let mediaArray = 0;
+  for (const person of people) {
+    mediaArray += person.edad;
+  }
+  const resultMedia = mediaArray / adalabers.length;
+  return resultMedia;
+}
+const resultMediaAge = averageAge(adalabers);
+console.log(resultMediaAge);
