@@ -27,18 +27,10 @@ const adalabers = [
   },
 ];
 //numero de adalabers en el listado
-function countAdalabers(adalabersArray) {
-  const count = adalabersArray.length;
+function countAdalabers(array) {
+  const count = array.length;
   return count;
 }
-const adalabersNum = countAdalabers(adalabers);
+const adalabersTotal = countAdalabers(adalabers);
 console.log(adalabersNum);
-
-//media de edad del listado
-function averageAge(adalabersArray) {
-    const media = 
-}
-//nombre de las mas joven
-function theYoungest() {}
-//numero de diseñadoras
-function countDesigners() {}
+console.log(countAdalabers(adalabers));
