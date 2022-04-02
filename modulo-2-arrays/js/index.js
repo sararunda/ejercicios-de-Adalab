@@ -32,5 +32,4 @@ function countAdalabers(array) {
   return count;
 }
 const adalabersTotal = countAdalabers(adalabers);
-console.log(adalabersNum);
-console.log(countAdalabers(adalabers));
+console.log(adalabersTotal);
