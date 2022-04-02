@@ -15,3 +15,8 @@ function average(numbers) {
 }
 const result1 = average(numbers1);
 const result0 = average(numbers0);
+
+const titles = document.querySelectorAll('h1');
+for (const title of titles) {
+  title.classList.add('js-hidden');
+}
