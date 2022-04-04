@@ -6,3 +6,4 @@ const saludoNames = names.map((name) => {
   return saludo + name;
 });
 console.log(saludoNames);
+console.log(names);
