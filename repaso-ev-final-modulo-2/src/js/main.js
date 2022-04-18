@@ -25,3 +25,5 @@ fetch(urlServer)
     }
     listPalettes.innerHTML = html;
   });
+//guardar mis paletas preferidas
+let favorites = [];
