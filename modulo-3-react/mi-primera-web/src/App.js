@@ -1,3 +1,4 @@
+import "./App.css"
 // ARRAY NORMAL CON MAP
 // function App() {
 //   const tasks = [
@@ -33,7 +34,7 @@ function App() {
   const renderTasks = () => {
     return tasks.map((task, index) => {
       return (
-        <li key={index} className="completed">
+        <li key={index} className={task.completed ? 'completed' : ''}>
           {task.task}
         </li>
       );
