@@ -10,34 +10,39 @@ function App() {
     email: '',
   });
   const [contactList, setContactList] = useState([]);
+  const [inputSearch, setInputSearch] = useState('');
 
   //functions
+
   const renderList = () => {
     console.log('contact list', contactList);
-    return contactList.map((data, index) => (
-      <li key={index} className="contact__item">
-        <p className="contact__name">
-          <label className="contact__label">Nombre:</label>
-          {data.name}
-          {data.lastname}
-        </p>
-        <p className="contact__phone">
-          <label className="contact__label">Teléfono:</label>
-          <a href="tel:603256679" title="Pulsa aquí para llamar a Jane">
-            {data.phone}
-          </a>
-        </p>
-        <p className="contact__mail">
-          <label className="contact__label">Email:</label>
-          <a
-            href="mailto:janenorton@adalab.es"
-            title="Pulsa aquí para escribir a Jane"
-          >
-            {data.email}
-          </a>
-        </p>
-      </li>
-    ));
+    return contactList
+      .filter((user) =>
+        user.name.toLocaleLowerCase().includes(inputSearch.toLocaleLowerCase())
+      )
+      .map((data, index) => (
+        <li key={index} className="contact__item">
+          <p className="contact__name">
+            <label className="contact__label">Nombre:</label>
+            {data.name} {data.lastname}
+          </p>
+          <p className="contact__phone">
+            <label className="contact__label">Teléfono:</label>
+            <a href="tel:603256679" title="Pulsa aquí para llamar a Jane">
+              {data.phone}
+            </a>
+          </p>
+          <p className="contact__mail">
+            <label className="contact__label">Email:</label>
+            <a
+              href="mailto:janenorton@adalab.es"
+              title="Pulsa aquí para escribir a Jane"
+            >
+              {data.email}
+            </a>
+          </p>
+        </li>
+      ));
   };
 
   //funciones manejadoras
@@ -55,6 +60,12 @@ function App() {
     ev.preventDefault();
     setContactList([...contactList, inputForm]);
   };
+
+  const handleChangeFilter = (event) => {
+    const inputValueSearch = event.target.value;
+    setInputSearch(inputValueSearch);
+  };
+
   return (
     <div className="page">
       {/* header */}
@@ -66,7 +77,9 @@ function App() {
             autoComplete="off"
             type="search"
             name="search"
+            value={inputSearch.name}
             placeholder="Filtrar contactos por nombre"
+            onChange={handleChangeFilter}
           />
         </form>
       </header>
