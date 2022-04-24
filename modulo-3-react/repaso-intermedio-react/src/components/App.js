@@ -54,7 +54,6 @@ function App() {
   const handleClickButton = (ev) => {
     ev.preventDefault();
     setContactList([...contactList, inputForm]);
-    console.log(contactList);
   };
   return (
     <div className="page">
