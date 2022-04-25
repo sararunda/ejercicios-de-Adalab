@@ -1,5 +1,6 @@
 import '../styles/App.scss';
 import { useState } from 'react';
+import contactListJson from '../data/contacts.json';
 
 function App() {
   //state variables
@@ -9,16 +10,19 @@ function App() {
     phone: '',
     email: '',
   });
-  const [contactList, setContactList] = useState([]);
+  const [contactList, setContactList] = useState(contactListJson);
   const [inputSearch, setInputSearch] = useState('');
 
   //functions
 
   const renderList = () => {
-    console.log('contact list', contactList);
     return contactList
-      .filter((user) =>
-        user.name.toLocaleLowerCase().includes(inputSearch.toLocaleLowerCase())
+      .filter(
+        (user) =>
+          user.name
+            .toLocaleLowerCase()
+            .includes(inputSearch.toLocaleLowerCase()) ||
+          user.lastname.toLowerCase().includes(inputSearch.toLocaleLowerCase())
       )
       .map((data, index) => (
         <li key={index} className="contact__item">
@@ -47,12 +51,12 @@ function App() {
 
   //funciones manejadoras
   const handleFormChange = (ev) => {
-    const inputName = ev.target.name;
+    const inputId = ev.target.id;
     const inputValue = ev.target.value;
 
     setInputForm({
       ...inputForm,
-      [inputName]: inputValue,
+      [inputId]: inputValue,
     });
   };
 
@@ -60,7 +64,7 @@ function App() {
     ev.preventDefault();
     setContactList([...contactList, inputForm]);
   };
-
+  //filtro
   const handleChangeFilter = (event) => {
     const inputValueSearch = event.target.value;
     setInputSearch(inputValueSearch);
