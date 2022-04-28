@@ -83,7 +83,7 @@ const App = () => {
             labelText={'Escribe un nombre:'}
             inputName={'name'}
             inputId={'name'}
-            inputPlaceholder={'María García'}
+            inputPlaceholder={'sara'}
             inputValue={name}
             onChange={handleName}
           />
