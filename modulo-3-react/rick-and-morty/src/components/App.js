@@ -7,16 +7,29 @@ import Footer from './Footer';
 
 function App() {
   const [data, setData] = useState([]);
+  const [input, setInput] = useState('');
+  const [select, setSelect] = useState('');
   useEffect(() => {
     getCharactersApi().then((apiData) => {
       setData(apiData);
-      console.log(apiData);
     });
   }, []);
+  const handleChangeInput = (inputValue) => {
+    setInput(inputValue);
+  };
+  const handleChangeSelect = (selectValue) => {
+    setSelect(selectValue);
+  };
 
   return (
     <div>
-      <ListCharacter listData={data} />
+      <Header
+        input={input}
+        select={select}
+        handleChangeInput={handleChangeInput}
+        handleChangeSelect={handleChangeSelect}
+      />
+      <ListCharacter input={input} listData={data} select={select} />
     </div>
   );
 }
