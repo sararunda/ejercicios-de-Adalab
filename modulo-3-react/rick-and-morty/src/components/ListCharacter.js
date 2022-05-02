@@ -17,6 +17,7 @@ const ListCharacter = (props) => {
             image={oneCharacter.image}
             species={oneCharacter.species}
             status={oneCharacter.status}
+            id={oneCharacter.id}
           />
         </li>
       ));

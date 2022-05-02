@@ -11,16 +11,29 @@ const Header = (props) => {
     props.handleChangeSelect(selectValue);
     console.log(selectValue);
   };
+  const handleClickReset = (event) => {
+    event.preventDefault();
+    props.handleClickReset();
+  };
+
   return (
     <>
       <img src="../images/rick.jpg" alt=""></img>
       <form action="">
         <input onChange={handleChangeInput} type="text" value={props.input} />
-        <select name="" id="" onChange={handleChangeSelect}>
+        <select
+          name=""
+          id=""
+          onChange={handleChangeSelect}
+          value={props.select}
+        >
           <option value="">Todos</option>
           <option value="human">Human</option>
           <option value="alien">Alien</option>
         </select>
+        <button onClick={handleClickReset} value="reset">
+          reset
+        </button>
       </form>
     </>
   );
